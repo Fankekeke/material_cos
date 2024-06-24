@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8d94e285-d1b0-4ce5-8593-dca4515a0d01" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/FebsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/FebsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/IsCron.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/IsCron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/Limit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/Limit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/annotation/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/aspect/LimitAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/aspect/LimitAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/aspect/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/aspect/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/ShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/authentication/ShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/AlipayConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/AsyncExecutorPoolConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/AsyncExecutorPoolConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/MyWebMvcConfigurerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/MyWebMvcConfigurerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/P6spySqlFormatConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/P6spySqlFormatConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/converter/TimeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/converter/TimeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/ActiveUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/ActiveUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/FebsConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/FebsConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/FebsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/FebsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/LimitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/LimitType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/QueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/QueryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/RedisInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/RedisInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/RegexpConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/RegexpConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/router/RouterMeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/router/RouterMeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/router/VueRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/domain/router/VueRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/FebsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/FebsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/LimitAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/LimitAccessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/RedisConnectException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/RedisConnectException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/TokenTimeoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/exception/TokenTimeoutException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/function/CacheSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/function/CacheSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/function/JedisExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/function/JedisExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/generator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/generator/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/properties/FebsProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/properties/FebsProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/properties/ShiroProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/properties/ShiroProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/runner/CacheInitRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/runner/CacheInitRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/runner/StartedUpRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/runner/StartedUpRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/CacheService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/CacheService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/impl/CacheServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/impl/CacheServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/impl/RedisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/service/impl/RedisServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/task/CacheTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/task/CacheTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/AddressUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/AddressUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/Alipay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/EncryptUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/EncryptUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/FebsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/FebsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/FileDownloadUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/HttpContextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/HttpContextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/HttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/IPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/IPUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/SortUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/SortUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/SpaceUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/SpringContextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/SpringContextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/TreeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/utils/TreeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/validator/CronValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/common/validator/CronValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/BulletinInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/BulletinInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/DeptInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/DoctorInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/DrugInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/EnterpriseInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/EnterpriseInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/HelpInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/HospitalInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/InventoryStatisticsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/LogisticsInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/MedicalInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/MedicationInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/OfficeInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/OrderDetailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/OrderEvaluateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/OrderInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/PayController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/PharmacyInventoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/PurchaseInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/RegisterInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/ReplyInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/ScheduleInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/StaffInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/StockAlertInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/controller/UserInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/BulletinInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/BulletinInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/DeptInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/DoctorInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/DrugInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/HelpInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/HospitalInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/InventoryStatisticsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/LogisticsInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/MedicalInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/MedicationInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/OfficeInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/OrderDetailMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/OrderEvaluateMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/OrderInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/PharmacyInventoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/PurchaseInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/RegisterInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/ReplyInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/ScheduleInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/StaffInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/StockAlertInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/dao/UserInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/AlipayBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/BulletinInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/BulletinInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/DeptInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/DoctorInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/DrugInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/HelpInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/HospitalInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/InventoryStatistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/LogisticsInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/MedicalInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/MedicationInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/OfficeInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/OrderEvaluate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/OrderInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/PharmacyInventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/PurchaseInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/RegisterInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/ReplyInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/ScheduleInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/StaffInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/StockAlertInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/vo/InventoryVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/vo/OrderDetailVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/vo/OrderInfoVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/entity/vo/OrderSubVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IBulletinInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IBulletinInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IDeptInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IDoctorInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IDrugInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IEnterpriseInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IEnterpriseInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IHelpInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IHospitalInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IInventoryStatisticsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/ILogisticsInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IMailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IMedicalInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IMedicationInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IOfficeInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IOrderDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IOrderEvaluateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IOrderInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IPharmacyInventoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IPurchaseInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IRegisterInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IReplyInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IScheduleInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IStaffInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IStockAlertInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/IUserInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/PayService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/BulletinInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/BulletinInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/DeptInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/DoctorInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/DrugInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/EnterpriseInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/EnterpriseInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/HelpInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/HospitalInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/IMailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/InventoryStatisticsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/LogisticsInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/MedicalInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/MedicationInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/OfficeInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/OrderDetailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/OrderEvaluateServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/OrderInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/PayServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/PharmacyInventoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/PurchaseInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/RegisterInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/ReplyInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/ScheduleInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/StaffInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/StockAlertInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/cos/service/impl/UserInfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/DictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/RedisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/RedisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/DeptMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/DictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/DictMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/LogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/LoginLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/LoginLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/RoleMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/RoleMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/TestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserConfigMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserConfigMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/dao/UserRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Dept.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Dept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Dict.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Dict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/LoginLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/LoginLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/RoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/RoleMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/SysLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/SysLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/UserConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/UserConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/domain/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/manager/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/DeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/DictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/DictService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/LoginLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/LoginLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/RoleMenuServie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/RoleMenuServie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserConfigService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/DictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/DictServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/LoginLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/RoleMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/RoleMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/cc/mrbird/febs/web/controller/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/ValidationMessages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/ValidationMessages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/config/alipay.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/controller.java.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/controller.java.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/entity.java.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/entity.java.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/mapper.java.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/mapper.java.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/mapper.xml.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/mapper.xml.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/service.java.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/service.java.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/serviceImpl.java.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/generator/templates/serviceImpl.java.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/spy.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/spy.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/template/majorProjectTemplate.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/templates/email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/templates/registerEmail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.postcssrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.postcssrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/check-versions.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/check-versions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue-loader.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/vue-loader.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.dev.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.prod.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/test.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/test.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FEBS.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/FEBS.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkbox/ColorCheckbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkbox/ColorCheckbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkbox/ImgCheckbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkbox/ImgCheckbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/datetime/RangeDate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/datetime/RangeDate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exception/ExceptionPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exception/ExceptionPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exception/typeConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exception/typeConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/Contextmenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/Contextmenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/SiderMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/SiderMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/setting/Setting.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setting/Setting.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/setting/SettingItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setting/SettingItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/setting/StyleItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setting/StyleItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tool/Drawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tool/Drawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/color.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/color.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/device.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/device.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/install.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/install.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/localstorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/localstorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/map/baiduMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/map/gisMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/map/searchmap/drawerMap.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/map/searchmap/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/permissionDirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/permissionDirect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/spreadJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/spreadJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/urlKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/EmptyPageView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/EmptyPageView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/GlobalFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/GlobalFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/GlobalHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/GlobalHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/GlobalLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/GlobalLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/HeadInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/HeadInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/HeaderAvatar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/HeaderAvatar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/MenuView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/MenuView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/PageContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/PageContent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/PageLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/PageLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/common/PageView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/PageView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/error/403.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/error/403.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/error/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/error/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/error/500.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/error/500.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/doctor/Doctor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/doctor/DoctorAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/doctor/DoctorEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/doctor/DoctorView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/evaluate/Evaluate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/inventory/Inventory.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/inventory/InventoryAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/logistics/Logistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/logistics/LogisticsEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/medication/Medication.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/medication/MedicationAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/medication/MedicationEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/medication/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/medication/PurchaseAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/office/Office.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/office/OfficeAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/office/OfficeEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/office/OfficeView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/order/Order.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/order/OrderAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/order/OrderAudit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/order/OrderStatus.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/order/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/personal/Personal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/register/Register.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/register/RegisterAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/register/RegisterEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/register/RegisterView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/schedule/Schedule.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/schedule/ScheduleAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/schedule/ScheduleEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/schedule/ScheduleView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/staff/Staff.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/staff/StaffAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/hospital/staff/StaffEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/Common.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/Common.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/Regist.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/Regist.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/admin/Admin.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/admin/AdminAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/admin/UserInfo.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/alert/Alert.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/alert/AlertAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/alert/AlertEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/bulletin/Bulletin.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/bulletin/BulletinAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/bulletin/BulletinEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/component/home/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/component/work/Work.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/doctor/Doctor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/doctor/DoctorAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/doctor/DoctorEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/doctor/DoctorView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/drug/Drug.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/drug/DrugAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/drug/DrugEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/drug/DrugView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/enterprise/Enterprise.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/enterprise/EnterpriseAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/enterprise/EnterpriseEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/enterprise/EnterpriseView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/evaluate/Evaluate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/help/Help.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/help/HelpAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/help/HelpEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/help/HelpView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/hospital/Hospital.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/hospital/HospitalAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/hospital/HospitalEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/hospital/HospitalView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/inventory/Inventory.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/inventory/InventoryAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/logistics/Logistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/logistics/LogisticsEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medical/Medical.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medical/MedicalAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medical/MedicalEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medical/MedicalView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medication/Medication.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medication/MedicationAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medication/MedicationEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medication/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/medication/PurchaseAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/office/Office.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/office/OfficeAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/office/OfficeEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/office/OfficeView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/order/Order.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/order/OrderAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/order/OrderAudit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/order/OrderStatus.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/order/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/pharmacy/Pharmacy.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/pharmacy/PharmacyAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/pharmacy/PharmacyEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/pharmacy/PharmacyView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/procurement/LogisticsEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/procurement/Procurement.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/procurement/PurchaseView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/purchase/LogisticsEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/purchase/Purchase.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/purchase/PurchaseAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/purchase/PurchaseView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/recycle/Recycle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/recycle/RecycleView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/register/Register.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/register/RegisterAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/register/RegisterEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/register/RegisterView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/reply/Reply.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/reply/ReplyView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/salaryRecords/SalaryRecords.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/salaryRecords/SalaryRecordsAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/salaryRecords/SalaryRecordsEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/salaryRecords/SalaryRecordsView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/schedule/Schedule.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/schedule/ScheduleAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/schedule/ScheduleEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/schedule/ScheduleView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/staff/Staff.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/staff/StaffAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/staff/StaffEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/statistics/Statistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/stock/InventoryAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/stock/Stock.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/user/User.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/user/UserAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/user/UserEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/manage/user/UserView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/Httptrace.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/Httptrace.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/JvmInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/JvmInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/Online.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/Online.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/RedisInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/RedisInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/RedisTerminal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/RedisTerminal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/SystemInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/SystemInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/SystemLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/SystemLog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/monitor/TomcatInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/monitor/TomcatInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/others/Excel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/others/Excel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/others/ImportResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/others/ImportResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/personal/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/personal/Profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/personal/UpdateAvatar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/personal/UpdateAvatar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/personal/UpdatePassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/personal/UpdatePassword.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/personal/UpdateProfile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/personal/UpdateProfile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/quartz/job/Job.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/quartz/job/Job.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/quartz/job/JobAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/quartz/job/JobAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/quartz/job/JobEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/quartz/job/JobEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/quartz/log/JobLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/quartz/log/JobLog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/order/Order.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/order/OrderAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/order/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/pay/Pay.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/payment/Payment.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/service/user/User.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/generate/Generate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/hospital/Hospital.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/map/Map.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/rank/Rank.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/report/Report.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/report/ReportAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/report/ReportEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/statistics/sale/Sale.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dept/Dept.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dept/Dept.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dept/DeptAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dept/DeptAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dept/DeptEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dept/DeptEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dept/DeptInputTree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dept/DeptInputTree.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dict/Dict.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dict/Dict.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dict/DictAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dict/DictAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/dict/DictEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/dict/DictEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/ButtonAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/ButtonAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/ButtonEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/ButtonEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/Icon.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/Icon.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/Icons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/Icons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/MenuAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/MenuAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/menu/MenuEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/menu/MenuEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/role/Role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/role/Role.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/role/RoleAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/role/RoleAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/role/RoleEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/role/RoleEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/role/RoleInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/role/RoleInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/user/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/user/UserAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/user/UserAdd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/user/UserEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/user/UserEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/user/UserInfo.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/user/UserInfo.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/system/user/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/system/user/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/evaluate/Evaluate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/medication/Medication.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/medication/MedicationAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/medication/MedicationEdit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/medication/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/medication/PurchaseAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/order/Order.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/order/OrderEvaluate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/order/OrderView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/pay/Pay.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/personal/Personal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/web/DailyArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/web/DailyArticle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/web/MovieComing.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/web/MovieComing.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/web/MovieHot.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/web/MovieHot.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/web/Weather.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/web/Weather.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/file/city.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/file/city.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/file/purchasePlan.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/file/purchasePlan.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/file/text.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/house.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/side-bar-dark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/side-bar-dark.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/side-bar-left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/side-bar-left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/side-bar-light.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/side-bar-light.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/side-bar-top.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/side-bar-top.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/Color.less" beforeDir="false" afterPath="$PROJECT_DIR$/static/less/Color.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/Common.less" beforeDir="false" afterPath="$PROJECT_DIR$/static/less/Common.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/utils/spreadJS/gc.spread.excelio.11.0.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/utils/spreadJS/gc.spread.excelio.11.0.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/utils/spreadJS/gc.spread.sheets.all.11.0.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/utils/spreadJS/gc.spread.sheets.all.11.0.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26e1GHDCccNPhjjOkikO0T4XnFK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Project/仓库管理系统/frontend/src/views/admin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Project\仓库管理系统\frontend\src\views\admin" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\utils" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\goods" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\stockout" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\stock" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d94e285-d1b0-4ce5-8593-dca4515a0d01" name="Default Changelist" comment="" />
+      <created>1647769140458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647769140458</updated>
+      <workItem from="1647769141599" duration="3281000" />
+      <workItem from="1647822892443" duration="25565000" />
+      <workItem from="1647907130405" duration="23512000" />
+      <workItem from="1647993384535" duration="18237000" />
+      <workItem from="1648037051905" duration="2370000" />
+      <workItem from="1648081482624" duration="7995000" />
+      <workItem from="1648116003472" duration="15000" />
+      <workItem from="1648474400775" duration="777000" />
+      <workItem from="1648947448542" duration="723000" />
+      <workItem from="1648974068918" duration="1410000" />
+      <workItem from="1648977580871" duration="53000" />
+      <workItem from="1649070933546" duration="440000" />
+      <workItem from="1649427550215" duration="22000" />
+      <workItem from="1649467957051" duration="959000" />
+      <workItem from="1650115344237" duration="180000" />
+      <workItem from="1664682127860" duration="1725000" />
+      <workItem from="1664758541055" duration="962000" />
+      <workItem from="1665811570581" duration="4214000" />
+      <workItem from="1668840003234" duration="1071000" />
+      <workItem from="1668841121041" duration="504000" />
+      <workItem from="1668841640318" duration="919000" />
+      <workItem from="1668842578411" duration="6560000" />
+      <workItem from="1668867816224" duration="24000" />
+      <workItem from="1668868068452" duration="608000" />
+      <workItem from="1668905384784" duration="577000" />
+      <workItem from="1669288798072" duration="761000" />
+      <workItem from="1670936166509" duration="1257000" />
+      <workItem from="1672553594624" duration="240000" />
+      <workItem from="1672571518579" duration="540000" />
+      <workItem from="1672572256848" duration="144000" />
+      <workItem from="1672586376629" duration="4000" />
+      <workItem from="1673015791385" duration="70000" />
+      <workItem from="1673072965840" duration="16000" />
+      <workItem from="1673073102827" duration="46000" />
+      <workItem from="1673102363106" duration="182000" />
+      <workItem from="1677472908328" duration="798000" />
+      <workItem from="1678367144437" duration="1193000" />
+      <workItem from="1678807835458" duration="13000" />
+      <workItem from="1683767102961" duration="76000" />
+      <workItem from="1688167347365" duration="600000" />
+      <workItem from="1699328516525" duration="661000" />
+      <workItem from="1699329200893" duration="11000" />
+      <workItem from="1701353803995" duration="50000" />
+      <workItem from="1701826625291" duration="620000" />
+      <workItem from="1701827438161" duration="26000" />
+      <workItem from="1701951418091" duration="39000" />
+      <workItem from="1703078571947" duration="2337000" />
+      <workItem from="1703158816873" duration="145000" />
+      <workItem from="1703905386666" duration="2204000" />
+      <workItem from="1719240294444" duration="446000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
