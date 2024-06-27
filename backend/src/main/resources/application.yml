@@ -1,6 +1,13 @@
 server:
   port: 9527
 
+baidu:
+  face:
+    app-name: property_face
+    app-id:  25798253
+    app-key: 8FH4xcAgXOyeTbC0kUUtCipE
+    secret-key: CK9FcAOXyl3SoAASg2yeXANSekTDVnUu
+
 spring:
   servlet:
     multipart:
