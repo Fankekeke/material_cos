@@ -38,5 +38,10 @@ public class ConsumableType implements Serializable {
      */
     private String createDate;
 
+    /**
+     * 父级ID
+     */
+    private String pid;
+
 
 }
