@@ -43,6 +43,7 @@ public class StorehouseInfoController {
      */
     @PostMapping
     public R save(StorehouseInfo storehouseInfo) {
+        storehouseInfo.setCode("SH-" + System.currentTimeMillis());
         storehouseInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(storehouseInfoService.save(storehouseInfo));
     }

@@ -131,7 +131,7 @@ export default {
         if (!err) {
           values.publisher = this.currentUser.userId
           this.loading = true
-          this.$post('/cos/store-info', {
+          this.$post('/cos/storehouse-info', {
             ...values
           }).then((r) => {
             this.reset()

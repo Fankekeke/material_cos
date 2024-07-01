@@ -133,7 +133,7 @@ export default {
         dataIndex: 'code'
       }, {
         title: '单位名称',
-        dataIndex: 'content'
+        dataIndex: 'name'
       }, {
         title: '创建时间',
         dataIndex: 'createDate',

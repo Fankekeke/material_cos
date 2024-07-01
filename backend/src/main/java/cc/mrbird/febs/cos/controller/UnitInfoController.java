@@ -45,6 +45,7 @@ public class UnitInfoController {
      */
     @PostMapping
     public R save(UnitInfo unitInfo) {
+        unitInfo.setCode("UN-" + System.currentTimeMillis());
         unitInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(unitInfoService.save(unitInfo));
     }

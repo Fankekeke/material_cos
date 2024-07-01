@@ -241,7 +241,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/store-info/' + ids).then(() => {
+          that.$delete('/cos/storehouse-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -311,7 +311,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/store-info/page', {
+      this.$get('/cos/storehouse-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data
