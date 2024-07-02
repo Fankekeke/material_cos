@@ -2,38 +2,8 @@
   <a-card :bordered="false" class="card-area">
     <div :class="advanced ? 'search' : null">
       <!-- 搜索区域 -->
-      <a-form layout="horizontal">
-        <a-row :gutter="15">
-          <div :class="advanced ? null: 'fold'">
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="类型名称"
-                :labelCol="{span: 4}"
-                :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.name"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="备注消息"
-                :labelCol="{span: 4}"
-                :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.content"/>
-              </a-form-item>
-            </a-col>
-          </div>
-          <span style="float: right; margin-top: 3px;">
-            <a-button type="primary" @click="search">查询</a-button>
-            <a-button style="margin-left: 8px" @click="reset">重置</a-button>
-          </span>
-        </a-row>
-      </a-form>
     </div>
     <div>
-      <div class="operator">
-        <a-button type="primary" ghost @click="add">新增</a-button>
-        <a-button @click="batchDelete">删除</a-button>
-      </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
                :columns="columns"
@@ -61,49 +31,46 @@
               <template slot="title">
                 {{ record.content }}
               </template>
-              {{ record.content.slice(0, 30) }} ...
+              {{ record.content.slice(0, 80) }} ...
             </a-tooltip>
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
-          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
+          <a-icon type="folder-open" @click="view(record)" title="查 看" style="margin-right: 15px"></a-icon>
         </template>
       </a-table>
+      <record-view
+        @close="handlerecordViewClose"
+        :recordShow="recordView.visiable"
+        :recordData="recordView.data">
+      </record-view>
     </div>
-    <consumable-add
-      v-if="consumableAdd.visiable"
-      @close="handleConsumableAddClose"
-      @success="handleConsumableAddSuccess"
-      :consumableAddVisiable="consumableAdd.visiable">
-    </consumable-add>
-    <consumable-edit
-      ref="consumableEdit"
-      @close="handleConsumableEditClose"
-      @success="handleConsumableEditSuccess"
-      :consumableEditVisiable="consumableEdit.visiable">
-    </consumable-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import ConsumableAdd from './TypeAdd'
-import ConsumableEdit from './TypeEdit'
+import RecordView from './ReplenishmentView'
 import {mapState} from 'vuex'
+import { newSpread, floatForm, floatReset, saveExcel } from '@/utils/spreadJS'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'consumable',
-  components: {ConsumableAdd, ConsumableEdit, RangeDate},
+  name: 'request',
+  components: {RecordView, RangeDate},
   data () {
     return {
       advanced: false,
-      consumableAdd: {
+      requestAdd: {
         visiable: false
       },
-      consumableEdit: {
+      requestEdit: {
         visiable: false
+      },
+      recordView: {
+        visiable: false,
+        data: null
       },
       queryParams: {},
       filteredInfo: null,
@@ -129,31 +96,12 @@ export default {
     }),
     columns () {
       return [{
-        title: '类型名称',
-        dataIndex: 'name'
-      }, {
-        title: '备注消息',
+        title: '盘库统计',
         dataIndex: 'content',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
+        scopedSlots: {customRender: 'contentShow'}
       }, {
-        title: '上级类型',
-        dataIndex: 'pname',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '无'
-          }
-        }
-      }, {
-        title: '创建时间',
-        dataIndex: 'createDate',
+        title: '盘库时间',
+        dataIndex: 'taskDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -172,6 +120,27 @@ export default {
     this.fetch()
   },
   methods: {
+    downLoad (row) {
+      this.$message.loading('正在生成', 0)
+      this.$get('/cos/goods-belong/getGoodsByNum', { num: row.num }).then((r) => {
+        let newData = []
+        r.data.data.forEach((item, index) => {
+          newData.push([(index + 1).toFixed(0), item.name, item.unit !== null ? item.unit : '- -', item.amount, row.price])
+        })
+        let spread = newSpread('inboundOrder')
+        spread = floatForm(spread, 'inboundOrder', newData)
+        saveExcel(spread, '入库单.xlsx')
+        floatReset(spread, 'inboundOrder', newData.length)
+        this.$message.destroy()
+      })
+    },
+    view (row) {
+      this.recordView.data = row
+      this.recordView.visiable = true
+    },
+    handlerecordViewClose () {
+      this.recordView.visiable = false
+    },
     onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
     },
@@ -179,26 +148,14 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.consumableAdd.visiable = true
+      this.requestAdd.visiable = true
     },
-    handleConsumableAddClose () {
-      this.consumableAdd.visiable = false
+    handleRequestAddClose () {
+      this.requestAdd.visiable = false
     },
-    handleConsumableAddSuccess () {
-      this.consumableAdd.visiable = false
-      this.$message.success('新增物品类型成功')
-      this.search()
-    },
-    edit (record) {
-      this.$refs.consumableEdit.setFormValues(record)
-      this.consumableEdit.visiable = true
-    },
-    handleConsumableEditClose () {
-      this.consumableEdit.visiable = false
-    },
-    handleConsumableEditSuccess () {
-      this.consumableEdit.visiable = false
-      this.$message.success('修改物品类型成功')
+    handleRequestAddSuccess () {
+      this.requestAdd.visiable = false
+      this.$message.success('入库成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -216,7 +173,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/consumable-type/' + ids).then(() => {
+          that.$delete('/cos/replenishment-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -286,7 +243,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/consumable-type/page', {
+      this.$get('/cos/replenishment-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

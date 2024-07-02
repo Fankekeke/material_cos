@@ -27,7 +27,8 @@ public class ConsumableTypeController {
 
     /**
      * 获取所有耗材类别
-     * @return
+     *
+     * @return 结果
      */
     @GetMapping("/list")
     public R list() {
@@ -36,19 +37,19 @@ public class ConsumableTypeController {
 
     /**
      * 分页查询耗材类型信息
-     * @param page
-     * @param consumableType
-     * @return
+     *
+     * @param page           分页对象
+     * @param consumableType 耗材类别
+     * @return 结果
      */
     @GetMapping("/page")
-    public R page(Page page, ConsumableType consumableType) {
-        return R.ok(consumableTypeService.page(page, Wrappers.<ConsumableType>lambdaQuery()
-                .like(!StrUtil.isBlank(consumableType.getName()), ConsumableType::getName, consumableType.getName())
-                .like(!StrUtil.isBlank(consumableType.getContent()), ConsumableType::getContent, consumableType.getContent())));
+    public R page(Page<ConsumableType> page, ConsumableType consumableType) {
+        return R.ok(consumableTypeService.selectConsumablePage(page, consumableType));
     }
 
     /**
      * 添加耗材类型信息
+     *
      * @param consumableType
      * @return
      */
@@ -60,6 +61,7 @@ public class ConsumableTypeController {
 
     /**
      * 修改耗材类型信息
+     *
      * @param consumableType
      * @return
      */
@@ -70,6 +72,7 @@ public class ConsumableTypeController {
 
     /**
      * 删除耗材类型信息
+     *
      * @param ids
      * @return
      */

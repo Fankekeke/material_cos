@@ -18,6 +18,16 @@
             ]"/>
           </a-form-item>
         </a-col>
+        <a-col :span="12">
+          <a-form-item label='上级类型' v-bind="formItemLayout">
+            <a-select v-decorator="[
+              'pid',
+              { rules: [{ required: true, message: '请输入名称!' }] }
+              ]" style="width: 100%">
+              <a-select-option v-for="(item, index) in parentTypeList" :value="item.id" :key="index">{{ item.name }}</a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
         <a-col :span="24">
           <a-form-item label='备注消息' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
@@ -61,10 +71,19 @@ export default {
       rowId: null,
       formItemLayout,
       form: this.$form.createForm(this),
-      loading: false
+      loading: false,
+      parentTypeList: []
     }
   },
+  mounted () {
+    this.selectParentTypeList()
+  },
   methods: {
+    selectParentTypeList () {
+      this.$get('/cos/consumable-type/list').then((r) => {
+        this.parentTypeList = r.data.data
+      })
+    },
     setFormValues ({...consumable}) {
       this.rowId = consumable.id
       let fields = ['name', 'content']
