@@ -36,6 +36,15 @@ public class StorehouseInfoController {
     }
 
     /**
+     * 盘库
+     */
+    @GetMapping("/replenishment")
+    public R replenishment() {
+        storehouseInfoService.diskLibrary();
+        return R.ok(true);
+    }
+
+    /**
      * 新增库房管理
      *
      * @param storehouseInfo 库房管理

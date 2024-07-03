@@ -42,6 +42,7 @@
     <div>
       <div class="operator">
         <a-button type="primary" ghost @click="add">出库</a-button>
+        <a-button type="primary" @click="download">导出</a-button>
 <!--        <a-button @click="batchDelete">删除</a-button>-->
       </div>
       <!-- 表格区域 -->
@@ -94,6 +95,7 @@ import RangeDate from '@/components/datetime/RangeDate'
 import {mapState} from 'vuex'
 import StockOut from './StockOut'
 import moment from 'moment'
+import { newSpread, floatForm, floatReset, saveExcel } from '@/utils/spreadJS'
 moment.locale('zh-cn')
 
 export default {
@@ -220,6 +222,20 @@ export default {
     this.getConsumableType()
   },
   methods: {
+    download () {
+      this.$message.loading('正在生成', 0)
+      this.$get('/cos/stock-info/list').then((r) => {
+        let newData = []
+        r.data.data.forEach((item, index) => {
+          newData.push([item.name, item.type !== null ? item.type : '- -', item.amount !== null ? item.amount : '- -', item.unit, item.price, item.consumableType, item.content, item.createDate])
+        })
+        let spread = newSpread('stock')
+        spread = floatForm(spread, 'stock', newData)
+        saveExcel(spread, '库房物品.xlsx')
+        floatReset(spread, 'stock', newData.length)
+        this.$message.destroy()
+      })
+    },
     getConsumableType () {
       this.$get('/cos/consumable-type/list').then((r) => {
         this.consumableType = r.data.data

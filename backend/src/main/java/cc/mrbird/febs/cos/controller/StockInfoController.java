@@ -30,6 +30,7 @@ public class StockInfoController {
 
     /**
      * 获取主页信息
+     *
      * @param type
      * @return
      */
@@ -40,6 +41,7 @@ public class StockInfoController {
 
     /**
      * 根号用户ID获取领取耗材
+     *
      * @param stockInfo
      * @return
      */
@@ -50,6 +52,7 @@ public class StockInfoController {
 
     /**
      * 入库
+     *
      * @param goods
      * @param custodian
      * @param putUser
@@ -63,6 +66,7 @@ public class StockInfoController {
 
     /**
      * 分页获取物品出入库详情
+     *
      * @param page
      * @param stockInfo
      * @return
@@ -74,6 +78,7 @@ public class StockInfoController {
 
     /**
      * 分页获取库房信息
+     *
      * @param page
      * @param stockInfo
      * @return
@@ -84,7 +89,19 @@ public class StockInfoController {
     }
 
     /**
+     * 分页获取库房信息
+     *
+     * @param stockInfo
+     * @return
+     */
+    @GetMapping("/list")
+    public R page(StockInfo stockInfo) {
+        return R.ok(stockInfoService.stockInfoByList(stockInfo));
+    }
+
+    /**
      * 添加库房信息
+     *
      * @param stockInfo
      * @return
      */

@@ -84,10 +84,6 @@ export default {
         title: '数量',
         dataIndex: 'quantity'
       }, {
-        title: '所属类型',
-        dataIndex: 'materialType',
-        scopedSlots: {customRender: 'typeIdShow'}
-      }, {
         title: '单位',
         dataIndex: 'measurementUnit'
       }, {

@@ -42,6 +42,12 @@ public class StockInfoServiceImpl extends ServiceImpl<StockInfoMapper, StockInfo
         return baseMapper.stockInfoByPage(page, stockInfo);
     }
 
+    // 获取库房信息
+    @Override
+    public List<LinkedHashMap<String, Object>> stockInfoByList(StockInfo stockInfo) {
+        return baseMapper.stockInfoByList(stockInfo);
+    }
+
     @Override
     public Boolean stockPut(String goods, String custodian, String putUser, String content, BigDecimal price) {
         // 添加入库单

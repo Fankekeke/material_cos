@@ -21,4 +21,9 @@ public interface IStorehouseInfoService extends IService<StorehouseInfo> {
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectStorePage(Page<StorehouseInfo> page, StorehouseInfo storehouseInfo);
+
+    /**
+     * 任务盘库
+     */
+    void diskLibrary();
 }

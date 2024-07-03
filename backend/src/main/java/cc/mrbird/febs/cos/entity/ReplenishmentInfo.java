@@ -53,6 +53,15 @@ public class ReplenishmentInfo implements Serializable {
      */
     private String replenishment;
 
+    @TableField(exist = false)
+    private String startDate;
+
+    @TableField(exist = false)
+    private String endDate;
+
+    @TableField(exist = false)
+    private String name;
+
     /**
      * 员工姓名
      */

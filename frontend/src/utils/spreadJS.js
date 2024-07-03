@@ -66,7 +66,9 @@ const fileNameData = {
   claimForm: 'claimForm.json',
   purchasePlan: 'purchasePlan.json',
   inboundOrder: 'inboundOrder.json',
-  outboundOrder: 'outboundOrder.json'
+  outboundOrder: 'outboundOrder.json',
+  replenishment: 'replenishment.json',
+  stock: 'stock.json'
 }
 
 // 表名对应的开始行index
@@ -74,7 +76,9 @@ const startRowData = {
   claimForm: 4,
   purchasePlan: 5,
   inboundOrder: 8,
-  outboundOrder: 8
+  outboundOrder: 8,
+  replenishment: 4,
+  stock: 4
 }
 
 // 表名对应的各列名，列名又对应行数和列数

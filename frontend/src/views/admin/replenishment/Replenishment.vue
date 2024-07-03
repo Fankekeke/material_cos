@@ -2,8 +2,37 @@
   <a-card :bordered="false" class="card-area">
     <div :class="advanced ? 'search' : null">
       <!-- 搜索区域 -->
+      <a-form layout="horizontal">
+        <a-row :gutter="15">
+          <div :class="advanced ? null: 'fold'">
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="物品名称"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.name"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="盘库时间"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-range-picker @change="onPickerChange" />
+              </a-form-item>
+            </a-col>
+          </div>
+          <span style="float: right; margin-top: 3px;">
+              <a-button type="primary" @click="search">查询</a-button>
+              <a-button style="margin-left: 8px" @click="reset">重置</a-button>
+            </span>
+        </a-row>
+      </a-form>
     </div>
     <div>
+      <div class="operator">
+        <a-button @click="replenishment">盘库</a-button>
+      </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
                :columns="columns"
@@ -37,6 +66,7 @@
         </template>
         <template slot="operation" slot-scope="text, record">
           <a-icon type="folder-open" @click="view(record)" title="查 看" style="margin-right: 15px"></a-icon>
+          <a-icon type="download" @click="downLoad(record)" title="下 载" style="margin-right: 15px"></a-icon>
         </template>
       </a-table>
       <record-view
@@ -120,19 +150,32 @@ export default {
     this.fetch()
   },
   methods: {
+    onPickerChange (date, dateString) {
+      if (date.length !== 0) {
+        this.queryParams.startDate = moment(date[0]).format('YYYY-MM-DD')
+        this.queryParams.endDate = moment(date[1]).format('YYYY-MM-DD')
+      } else {
+        delete this.queryParams.startDate
+        delete this.queryParams.endDate
+      }
+    },
+    replenishment () {
+      this.$get('/cos/storehouse-info/replenishment').then((r) => {
+        this.$message.success('等在盘库~请稍等')
+      })
+    },
     downLoad (row) {
       this.$message.loading('正在生成', 0)
-      this.$get('/cos/goods-belong/getGoodsByNum', { num: row.num }).then((r) => {
-        let newData = []
-        r.data.data.forEach((item, index) => {
-          newData.push([(index + 1).toFixed(0), item.name, item.unit !== null ? item.unit : '- -', item.amount, row.price])
-        })
-        let spread = newSpread('inboundOrder')
-        spread = floatForm(spread, 'inboundOrder', newData)
-        saveExcel(spread, '入库单.xlsx')
-        floatReset(spread, 'inboundOrder', newData.length)
-        this.$message.destroy()
+      let goodsList = JSON.parse(row.replenishment)
+      let newData = []
+      goodsList.forEach((item, index) => {
+        newData.push([item.materialName, item.model !== null ? item.model : '- -', item.quantity, item.measurementUnit, item.unitPrice])
       })
+      let spread = newSpread('replenishment')
+      spread = floatForm(spread, 'replenishment', newData)
+      saveExcel(spread, '盘库单.xlsx')
+      floatReset(spread, 'replenishment', newData.length)
+      this.$message.destroy()
     },
     view (row) {
       this.recordView.data = row

@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * @author FanK
@@ -16,6 +17,9 @@ public interface IStockInfoService extends IService<StockInfo> {
 
     // 分页获取库房信息
     IPage<LinkedHashMap<String, Object>> stockInfoByPage(Page page, StockInfo stockInfo);
+
+    // 获取库房信息
+    List<LinkedHashMap<String, Object>> stockInfoByList(StockInfo stockInfo);
 
     // 入库
     Boolean stockPut(String goods, String custodian, String putUser, String content, BigDecimal price);

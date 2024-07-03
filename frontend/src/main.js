@@ -6,6 +6,7 @@ import store from './store'
 import request from 'utils/request'
 import db from 'utils/localstorage'
 import VueApexCharts from 'vue-apexcharts'
+import dataV from '@jiaminghi/data-view'
 
 import 'ant-design-vue/dist/antd.css'
 
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 Vue.use(Antd)
 Vue.use(db)
 Vue.use(VueApexCharts)
+Vue.use(dataV)
 
 Vue.component('apexchart', VueApexCharts)
 

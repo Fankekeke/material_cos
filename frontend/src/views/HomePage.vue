@@ -37,6 +37,7 @@
         </a-col>
       </a-card>
     </a-row>
+    <a @click="orderMapOpen">统计看板</a>
     <a-row :gutter="15" class="count-info" v-if="user.roleId == 74">
       <a-col :span="8" class="project-wrapper" style="padding: 0">
         <a-card hoverable class="visit-count">
@@ -140,9 +141,14 @@
         </a-row>
       </a-col>
     </a-row>
+    <board
+      @close="handleorderMapViewClose"
+      :orderShow="orderMapView.visiable">
+    </board>
   </div>
 </template>
 <script>
+import board from '../views/admin/board/Board.vue'
 import HeadInfo from '@/views/common/HeadInfo'
 import {mapState} from 'vuex'
 import moment from 'moment'
@@ -154,9 +160,13 @@ const formItemLayout = {
 }
 export default {
   name: 'HomePage',
-  components: {HeadInfo},
+  components: {HeadInfo, board},
   data () {
     return {
+      orderMapView: {
+        visiable: false,
+        data: null
+      },
       form: this.$form.createForm(this),
       formItemLayout,
       series6: [{
@@ -385,6 +395,12 @@ export default {
     }
   },
   methods: {
+    orderMapOpen () {
+      this.orderMapView.visiable = true
+    },
+    handleorderMapViewClose () {
+      this.orderMapView.visiable = false
+    },
     welcome () {
       const date = new Date()
       const hour = date.getHours()
