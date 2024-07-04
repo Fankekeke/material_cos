@@ -42,8 +42,8 @@
     </div>
     <div>
       <div class="operator">
-<!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
-        <a-button @click="batchDelete">删除</a-button>
+        <a-button type="primary" ghost @click="add">新增</a-button>
+<!--        <a-button @click="batchDelete">删除</a-button>-->
       </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
@@ -77,25 +77,87 @@
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
-          <a-icon v-if="record.accountStatus == 0" type="caret-up" @click="edit(record, 1)" title="修 改"/>
-          <a-icon v-if="record.accountStatus == 1" type="caret-down" @click="edit(record, 0)" title="修 改"/>
+          <a-icon v-if="record.accountStatus == 0" type="caret-up" @click="editStatus(record, 1)" title="修 改"/>
+          <a-icon v-if="record.accountStatus == 1" type="caret-down" @click="editStatus(record, 0)" title="修 改"/>
+          <a-icon type="picture" v-if="record.images === null" @click="face(record)" title="照 片" style="margin-left: 15px"></a-icon>
         </template>
       </a-table>
+      <a-modal v-model="faceView.visiable" title="上传人脸照片">
+        <template slot="footer">
+          <a-button key="back" @click="faceView.visiable = false">
+            取消
+          </a-button>
+        </template>
+        <div style="height: 120px">
+          <a-upload
+            v-if="faceView.visiable"
+            name="avatar"
+            action="http://127.0.0.1:9527/cos/face/registered"
+            list-type="picture-card"
+            :data="{'name': faceView.data.name, 'userId': faceView.data.id}"
+            :file-list="fileList"
+            @preview="handlePreview"
+            @change="picHandleChange"
+          >
+            <div v-if="fileList.length < 1">
+              <a-icon type="plus" />
+              <div class="ant-upload-text">
+                Upload
+              </div>
+            </div>
+          </a-upload>
+        </div>
+        <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
+          <img alt="example" style="width: 100%" :src="previewImage" />
+        </a-modal>
+      </a-modal>
     </div>
+    <user-add
+      v-if="userAdd.visiable"
+      @close="handleuserAddClose"
+      @success="handleuserAddSuccess"
+      :userAddVisiable="userAdd.visiable">
+    </user-add>
+    <user-edit
+      ref="userEdit"
+      @close="handleuserEditClose"
+      @success="handleuserEditSuccess"
+      :userEditVisiable="userEdit.visiable">
+    </user-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
+import UserAdd from './UserAdd'
+import UserEdit from './UserEdit'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
+function getBase64 (file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = error => reject(error)
+  })
+}
 
 export default {
   name: 'student',
-  components: {RangeDate},
+  components: {RangeDate, UserAdd, UserEdit},
   data () {
     return {
+      faceView: {
+        visiable: false,
+        data: null
+      },
+      userAdd: {
+        visiable: false
+      },
+      userEdit: {
+        visiable: false
+      },
       advanced: false,
       queryParams: {},
       filteredInfo: null,
@@ -112,7 +174,10 @@ export default {
         showSizeChanger: true,
         showTotal: (total, range) => `显示 ${range[0]} ~ ${range[1]} 条记录，共 ${total} 条记录`
       },
-      userList: []
+      userList: [],
+      fileList: [],
+      previewVisible: false,
+      previewImage: ''
     }
   },
   computed: {
@@ -197,7 +262,58 @@ export default {
     this.fetch()
   },
   methods: {
-    edit (row, status) {
+    add () {
+      this.userAdd.visiable = true
+    },
+    handleuserAddClose () {
+      this.userAdd.visiable = false
+    },
+    handleuserAddSuccess () {
+      this.userAdd.visiable = false
+      this.$message.success('新增公告成功')
+      this.search()
+    },
+    edit (record) {
+      this.$refs.userEdit.setFormValues(record)
+      this.userEdit.visiable = true
+    },
+    handleuserEditClose () {
+      this.userEdit.visiable = false
+    },
+    handleuserEditSuccess () {
+      this.userEdit.visiable = false
+      this.$message.success('修改公告成功')
+      this.search()
+    },
+    handleCancel () {
+      this.previewVisible = false
+    },
+    async handlePreview (file) {
+      if (!file.url && !file.preview) {
+        file.preview = await getBase64(file.originFileObj)
+      }
+      this.previewImage = file.url || file.preview
+      this.previewVisible = true
+    },
+    picHandleChange (info) {
+      console.log(info.file.response)
+      if (info.file.response !== undefined && info.file.response.msg !== undefined) {
+        if (info.file.response.msg === 'success') {
+          this.$message.success('添加照片成功')
+          this.faceView.visiable = false
+          this.fetch()
+        } else {
+          this.$message.error(info.file.response.msg)
+        }
+      }
+      this.fileList = info.fileList
+    },
+    face (row) {
+      this.fileList = []
+      this.faceView.visiable = true
+      this.faceView.data = row
+    },
+    editStatus (row, status) {
       this.$post('/cos/student-info/accountStatusEdit', { userId: row.userId, status }).then((r) => {
         this.$message.success('修改成功')
         this.fetch()

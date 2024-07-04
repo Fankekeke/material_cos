@@ -31,7 +31,7 @@ public class StockOut implements Serializable {
     private String num;
 
     /**
-     * 学生ID
+     * 用户ID
      */
     private Integer userId;
 

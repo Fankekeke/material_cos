@@ -3,51 +3,51 @@
     <div style="text-align: left;font-size: 14px;margin-bottom: 30px"><b>仓储管理系统</b></div>
     <div class="user-layout-register">
       <a-form ref="formRegister" :autoFormCreate="(form)=>{this.form = form}" id="formRegister">
-        <a-form-item
-          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入姓名' }]}">
-          <a-input type="text" v-model="studentName" placeholder="账号"></a-input>
-        </a-form-item>
+<!--        <a-form-item-->
+<!--          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入姓名' }]}">-->
+<!--          <a-input type="text" v-model="studentName" placeholder="账号"></a-input>-->
+<!--        </a-form-item>-->
         <a-button
           type="primary"
           @click.stop.prevent="faceViewOpen">人脸认证
         </a-button>
-        <a-divider orientation="left"><span style="font-size: 12px">账户注册</span></a-divider>
-        <a-form-item
-          fieldDecoratorId="email"
-          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入注册账号' },  { validator: this.handleUsernameCheck }], validateTrigger: ['change', 'blur']}">
-          <a-input type="text" v-model="username" placeholder="账号"></a-input>
-        </a-form-item>
-        <a-popover placement="rightTop" trigger="click" :visible="state.passwordLevelChecked">
-          <template slot="content">
-            <div :style="{ width: '240px' }">
-              <div :class="['user-register', passwordLevelClass]">强度：<span>{{ passwordLevelName }}</span></div>
-              <a-progress :percent="state.percent" :showInfo="false" :strokeColor=" passwordLevelColor "/>
-              <div style="margin-top: 10px;">
-                <span>请至少输入 6 个字符。请不要使用容易被猜到的密码。</span>
-              </div>
-            </div>
-          </template>
-          <a-form-item
-            fieldDecoratorId="password"
-            :fieldDecoratorOptions="{rules: [{ required: true, message: '至少6位密码'}, { validator: this.handlePasswordLevel }], validateTrigger: ['change', 'blur']}">
-            <a-input v-model="password" type="password" @click="handlePasswordInputClick" autocomplete="false"
-                     placeholder="至少6位密码"></a-input>
-          </a-form-item>
-        </a-popover>
-        <a-form-item
-          fieldDecoratorId="password2"
-          :fieldDecoratorOptions="{rules: [{ required: true, message: '至少6位密码' }, { validator: this.handlePasswordCheck }], validateTrigger: ['change', 'blur']}">
-          <a-input type="password" autocomplete="false" placeholder="确认密码"></a-input>
-        </a-form-item>
+<!--        <a-divider orientation="left"><span style="font-size: 12px">账户注册</span></a-divider>-->
+<!--        <a-form-item-->
+<!--          fieldDecoratorId="email"-->
+<!--          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入注册账号' },  { validator: this.handleUsernameCheck }], validateTrigger: ['change', 'blur']}">-->
+<!--          <a-input type="text" v-model="username" placeholder="账号"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-popover placement="rightTop" trigger="click" :visible="state.passwordLevelChecked">-->
+<!--          <template slot="content">-->
+<!--            <div :style="{ width: '240px' }">-->
+<!--              <div :class="['user-register', passwordLevelClass]">强度：<span>{{ passwordLevelName }}</span></div>-->
+<!--              <a-progress :percent="state.percent" :showInfo="false" :strokeColor=" passwordLevelColor "/>-->
+<!--              <div style="margin-top: 10px;">-->
+<!--                <span>请至少输入 6 个字符。请不要使用容易被猜到的密码。</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </template>-->
+<!--          <a-form-item-->
+<!--            fieldDecoratorId="password"-->
+<!--            :fieldDecoratorOptions="{rules: [{ required: true, message: '至少6位密码'}, { validator: this.handlePasswordLevel }], validateTrigger: ['change', 'blur']}">-->
+<!--            <a-input v-model="password" type="password" @click="handlePasswordInputClick" autocomplete="false"-->
+<!--                     placeholder="至少6位密码"></a-input>-->
+<!--          </a-form-item>-->
+<!--        </a-popover>-->
+<!--        <a-form-item-->
+<!--          fieldDecoratorId="password2"-->
+<!--          :fieldDecoratorOptions="{rules: [{ required: true, message: '至少6位密码' }, { validator: this.handlePasswordCheck }], validateTrigger: ['change', 'blur']}">-->
+<!--          <a-input type="password" autocomplete="false" placeholder="确认密码"></a-input>-->
+<!--        </a-form-item>-->
         <a-form-item>
-          <a-button
-            type="primary"
-            htmlType="submit"
-            class="register-button"
-            :loading="registerBtn"
-            @click.stop.prevent="handleSubmit"
-            :disabled="registerBtn">立即注册
-          </a-button>
+<!--          <a-button-->
+<!--            type="primary"-->
+<!--            htmlType="submit"-->
+<!--            class="register-button"-->
+<!--            :loading="registerBtn"-->
+<!--            @click.stop.prevent="handleSubmit"-->
+<!--            :disabled="registerBtn">立即注册-->
+<!--          </a-button>-->
           <a class="login" @click="returnLogin">使用已有账户登录</a>
         </a-form-item>
 

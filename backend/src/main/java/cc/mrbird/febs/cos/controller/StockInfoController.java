@@ -100,6 +100,16 @@ public class StockInfoController {
     }
 
     /**
+     * 统计看板查询
+     *
+     * @return 结果
+     */
+    @GetMapping("/selectBoard")
+    public R selectBoard() {
+        return R.ok(stockInfoService.selectBoard());
+    }
+
+    /**
      * 添加库房信息
      *
      * @param stockInfo

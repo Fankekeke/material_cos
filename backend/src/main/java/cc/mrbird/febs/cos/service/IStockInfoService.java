@@ -21,6 +21,13 @@ public interface IStockInfoService extends IService<StockInfo> {
     // 获取库房信息
     List<LinkedHashMap<String, Object>> stockInfoByList(StockInfo stockInfo);
 
+    /**
+     * 统计看板查询
+     *
+     * @return 结果
+     */
+    LinkedHashMap<String, Object> selectBoard();
+
     // 入库
     Boolean stockPut(String goods, String custodian, String putUser, String content, BigDecimal price);
 

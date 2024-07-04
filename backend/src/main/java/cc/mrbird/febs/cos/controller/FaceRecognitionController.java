@@ -2,7 +2,9 @@ package cc.mrbird.febs.cos.controller;
 
 import cc.mrbird.febs.common.utils.FileUtil;
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.StudentInfo;
 import cc.mrbird.febs.cos.service.FaceRecognition;
+import cc.mrbird.febs.cos.service.IStudentInfoService;
 import cc.mrbird.febs.system.domain.User;
 import cc.mrbird.febs.system.service.UserService;
 import cn.hutool.json.JSONUtil;
@@ -34,6 +36,8 @@ public class FaceRecognitionController {
 
     private final UserService userService;
 
+    private final IStudentInfoService studentInfoService;
+
     /**
      * 人脸注册
      *
@@ -47,10 +51,10 @@ public class FaceRecognitionController {
         String base64EncoderImg = base64Encoder.encode(file.getBytes());
         String result = faceRecognition.registered(base64EncoderImg, name);
         if ("success".equals(result)) {
-            String localPath="E:/Project/小区物业管理系统/db";
+            String localPath="G:/Project/仓储管理系统/db";
             String fileName=file.getOriginalFilename();
             String newFileName = FileUtil.upload(file, localPath, fileName);
-            userService.update(Wrappers.<User>lambdaUpdate().set(User::getImages, newFileName).eq(User::getUserId, userId));
+            studentInfoService.update(Wrappers.<StudentInfo>lambdaUpdate().set(StudentInfo::getImages, newFileName).eq(StudentInfo::getId, userId));
         }
         return R.ok(result);
     }

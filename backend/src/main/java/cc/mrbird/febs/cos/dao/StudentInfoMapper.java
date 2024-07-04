@@ -13,6 +13,6 @@ import java.util.LinkedHashMap;
  */
 public interface StudentInfoMapper extends BaseMapper<StudentInfo> {
 
-    // 分页获取学生信息
+    // 分页获取用户信息
     IPage<LinkedHashMap<String, Object>> studentInfoByPage(Page page, @Param("studentInfo") StudentInfo studentInfo);
 }

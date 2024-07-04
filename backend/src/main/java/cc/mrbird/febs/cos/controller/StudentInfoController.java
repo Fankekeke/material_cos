@@ -27,7 +27,7 @@ public class StudentInfoController {
     private final UserService userService;
 
     /**
-     * 获取所有学生
+     * 获取所有用户
      * @return
      */
     @GetMapping("/list")
@@ -47,7 +47,7 @@ public class StudentInfoController {
     }
 
     /**
-     * 分页获取学生信息
+     * 分页获取用户信息
      * @param page
      * @param studentInfo
      * @return
@@ -58,7 +58,7 @@ public class StudentInfoController {
     }
 
     /**
-     * 修改学生信息
+     * 修改用户信息
      * @param studentInfo
      * @return
      */
@@ -68,7 +68,7 @@ public class StudentInfoController {
     }
 
     /**
-     * 删除学生信息
+     * 删除用户信息
      * @param ids
      * @return
      */

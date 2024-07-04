@@ -71,7 +71,7 @@ public class StockInfo implements Serializable {
     private Integer isIn;
 
     /**
-     * 出库到哪个学生
+     * 出库到哪个用户
      */
     private Integer toUserId;
 

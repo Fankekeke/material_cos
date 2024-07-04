@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 学生管理
+ * 用户管理
  *
  * @author FanK
  */
@@ -47,6 +47,7 @@ public class StudentInfo implements Serializable {
      * 创建时间
      */
     private String createDate;
+    private String images;
 
     @TableField(exist = false)
     private Integer accountStatus;

@@ -35,7 +35,7 @@
           </a-button>
         </a-form-item>
         <div>
-          <a style="float: right" @click="regist">注册账户</a>
+          <a style="float: right" @click="regist">人脸识别登录</a>
         </div>
       </a-form>
     </div>

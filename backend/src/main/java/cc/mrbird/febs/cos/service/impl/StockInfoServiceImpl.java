@@ -1,12 +1,10 @@
 package cc.mrbird.febs.cos.service.impl;
 
-import cc.mrbird.febs.cos.entity.GoodsBelong;
-import cc.mrbird.febs.cos.entity.StockInfo;
+import cc.mrbird.febs.cos.entity.*;
 import cc.mrbird.febs.cos.dao.StockInfoMapper;
-import cc.mrbird.febs.cos.entity.StockPut;
-import cc.mrbird.febs.cos.entity.StudentInfo;
 import cc.mrbird.febs.cos.service.*;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.NumberUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -18,9 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author FanK
@@ -37,6 +34,8 @@ public class StockInfoServiceImpl extends ServiceImpl<StockInfoMapper, StockInfo
 
     private final IStudentInfoService studentInfoService;
 
+    private final IConsumableTypeService consumableTypeService;
+
     @Override
     public IPage<LinkedHashMap<String, Object>> stockInfoByPage(Page page, StockInfo stockInfo) {
         return baseMapper.stockInfoByPage(page, stockInfo);
@@ -46,6 +45,88 @@ public class StockInfoServiceImpl extends ServiceImpl<StockInfoMapper, StockInfo
     @Override
     public List<LinkedHashMap<String, Object>> stockInfoByList(StockInfo stockInfo) {
         return baseMapper.stockInfoByList(stockInfo);
+    }
+
+    /**
+     * 统计看板查询
+     *
+     * @return 结果
+     */
+    @Override
+    public LinkedHashMap<String, Object> selectBoard() {
+        // 返回数据
+        LinkedHashMap<String, Object> result = new LinkedHashMap<String, Object>() {
+            {
+                put("out", Collections.emptyList());
+                put("put", Collections.emptyList());
+                put("price", Collections.emptyList());
+                put("type", Collections.emptyList());
+            }
+        };
+
+        // 库房信息
+        List<StockInfo> stockInfoList = this.list(Wrappers.<StockInfo>lambdaQuery().eq(StockInfo::getIsIn, 0));
+        // 入库信息
+        List<StockInfo> putStockInfoList = this.list(Wrappers.<StockInfo>lambdaQuery().eq(StockInfo::getIsIn, 1));
+        // 出库信息
+        List<StockInfo> outStockInfoList = this.list(Wrappers.<StockInfo>lambdaQuery().eq(StockInfo::getIsIn, 2));
+
+        // 物品类型
+        List<ConsumableType> typeList = consumableTypeService.list();
+        Map<Integer, String> typeMap = typeList.stream().collect(Collectors.toMap(ConsumableType::getId, ConsumableType::getName));
+
+        // 出库统计
+        List<LinkedHashMap<String, Object>> outRateList = new ArrayList<>();
+        Map<Integer, List<StockInfo>> outRate = outStockInfoList.stream().collect(Collectors.groupingBy(StockInfo::getTypeId));
+        outRate.forEach((key, value) -> {
+            LinkedHashMap<String, Object> rateItem = new LinkedHashMap<String, Object>() {
+                {
+                    put("name", typeMap.get(key));
+                    put("value", value.size());
+                }
+            };
+            outRateList.add(rateItem);
+        });
+
+        // 入库统计
+        List<LinkedHashMap<String, Object>> putRateList = new ArrayList<>();
+        Map<Integer, List<StockInfo>> putRate = putStockInfoList.stream().collect(Collectors.groupingBy(StockInfo::getTypeId));
+        putRate.forEach((key, value) -> {
+            LinkedHashMap<String, Object> rateItem = new LinkedHashMap<String, Object>() {
+                {
+                    put("name", typeMap.get(key));
+                    put("value", value.size());
+                }
+            };
+            putRateList.add(rateItem);
+        });
+
+        // 库房统计
+        List<LinkedHashMap<String, Object>> stockRateList = new ArrayList<>();
+        // 库房价格统计
+        List<LinkedHashMap<String, Object>> stockPriceRateList = new ArrayList<>();
+        Map<Integer, List<StockInfo>> stockRate = stockInfoList.stream().collect(Collectors.groupingBy(StockInfo::getTypeId));
+        stockRate.forEach((key, value) -> {
+            LinkedHashMap<String, Object> rateItem = new LinkedHashMap<String, Object>() {
+                {
+                    put("name", typeMap.get(key));
+                    put("value", value.size());
+                }
+            };
+            LinkedHashMap<String, Object> priceRateItem = new LinkedHashMap<String, Object>() {
+                {
+                    put("name", typeMap.get(key));
+                    put("value", value.stream().map(e -> NumberUtil.mul(e.getAmount(), e.getPrice())).reduce(BigDecimal.ZERO,BigDecimal::add));
+                }
+            };
+            stockRateList.add(rateItem);
+            stockPriceRateList.add(rateItem);
+        });
+        result.put("out", outRateList);
+        result.put("put", putRateList);
+        result.put("price", stockPriceRateList);
+        result.put("type", stockRateList);
+        return result;
     }
 
     @Override
