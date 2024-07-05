@@ -6,12 +6,14 @@ import cc.mrbird.febs.cos.entity.StudentInfo;
 import cc.mrbird.febs.cos.service.IStudentInfoService;
 import cc.mrbird.febs.system.domain.User;
 import cc.mrbird.febs.system.service.UserService;
+import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -55,6 +57,19 @@ public class StudentInfoController {
     @GetMapping("/page")
     public R page(Page page, StudentInfo studentInfo) {
         return R.ok(studentInfoService.studentInfoByPage(page, studentInfo));
+    }
+
+    /**
+     * 添加用户信息
+     * @param studentInfo
+     * @return
+     */
+    @PostMapping
+    public R save(StudentInfo studentInfo) throws Exception {
+        studentInfo.setCode("PR-" + System.currentTimeMillis());
+        studentInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
+        userService.registUser(studentInfo);
+        return R.ok(true);
     }
 
     /**

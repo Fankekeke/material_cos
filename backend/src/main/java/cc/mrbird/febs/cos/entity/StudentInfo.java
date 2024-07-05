@@ -23,6 +23,12 @@ public class StudentInfo implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.AUTO)
     private Integer id;
+
+    /**
+     * 编号
+     */
+    private String code;
+
     /**
      * 姓名
      */
