@@ -41,18 +41,18 @@ public class FaceRecognitionController {
     /**
      * 人脸注册
      *
-     * @param file  图片
+     * @param file 图片
      * @param name 名称
      * @return
      */
     @PostMapping("/registered")
     public R registered(@RequestParam("avatar") MultipartFile file, @RequestParam("name") String name, @RequestParam("userId") Integer userId) throws IOException {
-        BASE64Encoder base64Encoder =new BASE64Encoder();
+        BASE64Encoder base64Encoder = new BASE64Encoder();
         String base64EncoderImg = base64Encoder.encode(file.getBytes());
         String result = faceRecognition.registered(base64EncoderImg, name);
         if ("success".equals(result)) {
-            String localPath="G:/Project/仓储管理系统/db";
-            String fileName=file.getOriginalFilename();
+            String localPath = "G:/Project/仓储管理系统/db";
+            String fileName = file.getOriginalFilename();
             String newFileName = FileUtil.upload(file, localPath, fileName);
             studentInfoService.update(Wrappers.<StudentInfo>lambdaUpdate().set(StudentInfo::getImages, newFileName).eq(StudentInfo::getId, userId));
         }
@@ -84,17 +84,18 @@ public class FaceRecognitionController {
 
     /**
      * test
+     *
      * @param text
      * @return
      */
     @PostMapping("/sendFile")
     public R test(String text) throws IOException {
-        BASE64Encoder base64Encoder =new BASE64Encoder();
+        BASE64Encoder base64Encoder = new BASE64Encoder();
         String fileList = JSONUtil.parseObj(text).get("fileName").toString();
         String path = JSONUtil.parseObj(text).get("path").toString();
         // 识别人脸信息
         for (String s : fileList.split(",")) {
-            System.out.println("=====>"+s);
+            System.out.println("=====>" + s);
             if (".jpg".equals(s.substring(s.length() - 4))) {
                 System.out.println(path + s);
                 File file = new File("D:/saber/new.jpg");
@@ -103,7 +104,7 @@ public class FaceRecognitionController {
                         ContentType.APPLICATION_OCTET_STREAM.toString(), inputStream);
                 String result = faceRecognition.verification(base64Encoder.encode(multipartFile.getBytes()));
                 if (!"error".equals(result)) {
-                    System.out.println("识别成功=====>   "+result);
+                    System.out.println("识别成功=====>   " + result);
                     return R.ok(result);
                 }
             }

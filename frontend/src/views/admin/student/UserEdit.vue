@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model="show" title="修改公告" @cancel="onClose" :width="800">
+  <a-modal v-model="show" title="修改用户" @cancel="onClose" :width="800">
     <template slot="footer">
       <a-button key="back" @click="onClose">
         取消
@@ -11,49 +11,27 @@
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
         <a-col :span="12">
-          <a-form-item label='公告标题' v-bind="formItemLayout">
+          <a-form-item label='用户名称' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'title',
+            'name',
             { rules: [{ required: true, message: '请输入名称!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='上传人' v-bind="formItemLayout">
+          <a-form-item label='所属部门' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'publisher',
-            { rules: [{ required: true, message: '请输入上传人!' }] }
+            'team',
+            { rules: [{ required: true, message: '请输入所属部门!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='公告内容' v-bind="formItemLayout">
+          <a-form-item label='备注' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
-             { rules: [{ required: true, message: '请输入名称!' }] }
+             { rules: [{ required: true, message: '请输入备注!' }] }
             ]"/>
-          </a-form-item>
-        </a-col>
-        <a-col :span="24">
-          <a-form-item label='图册' v-bind="formItemLayout">
-            <a-upload
-              name="avatar"
-              action="http://127.0.0.1:9527/file/fileUpload/"
-              list-type="picture-card"
-              :file-list="fileList"
-              @preview="handlePreview"
-              @change="picHandleChange"
-            >
-              <div v-if="fileList.length < 8">
-                <a-icon type="plus" />
-                <div class="ant-upload-text">
-                  Upload
-                </div>
-              </div>
-            </a-upload>
-            <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
-              <img alt="example" style="width: 100%" :src="previewImage" />
-            </a-modal>
           </a-form-item>
         </a-col>
       </a-row>
@@ -76,9 +54,9 @@ const formItemLayout = {
   wrapperCol: { span: 24 }
 }
 export default {
-  name: 'BulletinEdit',
+  name: 'userEdit',
   props: {
-    bulletinEditVisiable: {
+    userEditVisiable: {
       default: false
     }
   },
@@ -88,7 +66,7 @@ export default {
     }),
     show: {
       get: function () {
-        return this.bulletinEditVisiable
+        return this.userEditVisiable
       },
       set: function () {
       }
@@ -128,18 +106,18 @@ export default {
         this.fileList = imageList
       }
     },
-    setFormValues ({...bulletin}) {
-      this.rowId = bulletin.id
-      let fields = ['title', 'content', 'publisher']
+    setFormValues ({...user}) {
+      this.rowId = user.id
+      let fields = ['name', 'team', 'content']
       let obj = {}
-      Object.keys(bulletin).forEach((key) => {
+      Object.keys(user).forEach((key) => {
         if (key === 'images') {
           this.fileList = []
-          this.imagesInit(bulletin['images'])
+          this.imagesInit(user['images'])
         }
         if (fields.indexOf(key) !== -1) {
           this.form.getFieldDecorator(key)
-          obj[key] = bulletin[key]
+          obj[key] = user[key]
         }
       })
       this.form.setFieldsValue(obj)
@@ -153,17 +131,11 @@ export default {
       this.$emit('close')
     },
     handleSubmit () {
-      // 获取图片List
-      let images = []
-      this.fileList.forEach(image => {
-        images.push(image.name)
-      })
       this.form.validateFields((err, values) => {
         values.id = this.rowId
-        values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
           this.loading = true
-          this.$put('/cos/bulletin-info', {
+          this.$put('/cos/user-info', {
             ...values
           }).then((r) => {
             this.reset()

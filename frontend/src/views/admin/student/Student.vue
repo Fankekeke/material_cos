@@ -189,6 +189,9 @@ export default {
         title: '用户名称',
         dataIndex: 'name'
       }, {
+        title: '编号',
+        dataIndex: 'code'
+      }, {
         title: '采购部门',
         dataIndex: 'team',
         customRender: (text, row, index) => {
@@ -270,7 +273,7 @@ export default {
     },
     handleuserAddSuccess () {
       this.userAdd.visiable = false
-      this.$message.success('新增公告成功')
+      this.$message.success('新增用户成功')
       this.search()
     },
     edit (record) {
@@ -282,7 +285,7 @@ export default {
     },
     handleuserEditSuccess () {
       this.userEdit.visiable = false
-      this.$message.success('修改公告成功')
+      this.$message.success('修改用户成功')
       this.search()
     },
     handleCancel () {
