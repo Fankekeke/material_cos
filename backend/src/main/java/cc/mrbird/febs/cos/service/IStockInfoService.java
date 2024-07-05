@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
@@ -39,4 +40,12 @@ public interface IStockInfoService extends IService<StockInfo> {
 
     // 获取主页信息
     LinkedHashMap<String, Object> home(Integer type, Integer userId);
+
+    /**
+     * 导入信息列表
+     *
+     * @param file 文件
+     * @return 结果
+     */
+    String importExcel(MultipartFile file) throws Exception;
 }

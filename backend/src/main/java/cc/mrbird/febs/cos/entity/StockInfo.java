@@ -80,6 +80,11 @@ public class StockInfo implements Serializable {
      */
     private Integer parentId;
 
+    /**
+     * 所属库房
+     */
+    private Integer stockId;
+
     @TableField(exist = false)
     private Integer userId;
 

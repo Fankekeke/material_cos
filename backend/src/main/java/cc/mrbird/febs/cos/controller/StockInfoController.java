@@ -5,14 +5,12 @@ import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.StockInfo;
 import cc.mrbird.febs.cos.service.IStockInfoService;
 import cc.mrbird.febs.cos.service.IStockPutService;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
@@ -37,6 +35,23 @@ public class StockInfoController {
     @GetMapping("/home")
     public R home(Integer type, Integer userId) {
         return R.ok(stockInfoService.home(type, userId));
+    }
+
+    /**
+     * 导入信息列表
+     */
+    @PostMapping("/import")
+    public R importExcel(@RequestParam("file") MultipartFile file) {
+        try {
+            String errorMsg = stockInfoService.importExcel(file);
+            if (StrUtil.isNotEmpty(errorMsg)) {
+                return R.error(errorMsg);
+            }
+            return R.ok();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return R.error("导入异常");
     }
 
     /**
