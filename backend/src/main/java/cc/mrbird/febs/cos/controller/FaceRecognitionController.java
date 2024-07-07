@@ -1,11 +1,13 @@
 package cc.mrbird.febs.cos.controller;
 
+import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.utils.FileUtil;
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.StudentInfo;
 import cc.mrbird.febs.cos.service.FaceRecognition;
 import cc.mrbird.febs.cos.service.IStudentInfoService;
 import cc.mrbird.febs.system.domain.User;
+import cc.mrbird.febs.system.service.LoginLogService;
 import cc.mrbird.febs.system.service.UserService;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import sun.misc.BASE64Encoder;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,6 +40,8 @@ public class FaceRecognitionController {
     private final UserService userService;
 
     private final IStudentInfoService studentInfoService;
+
+    private final LoginLogService loginLogService;
 
     /**
      * 人脸注册
@@ -66,19 +71,26 @@ public class FaceRecognitionController {
      * @return
      */
     @PostMapping("/verification")
-    public R verification(@RequestParam("file") String file, @RequestParam("name") String name) throws IOException {
+    public FebsResponse verification(@RequestParam("file") String file, HttpServletRequest request) throws Exception {
 //        BASE64Encoder base64Encoder =new BASE64Encoder();
 //        String base64EncoderImg = base64Encoder.encode(file.getBytes());
 
         String result = faceRecognition.verification(file);
+        System.out.println(result);
         if ("error".equals(result)) {
-            return R.ok("人脸识别未通过！");
+            return new FebsResponse().message("人脸识别未通过");
         } else {
-            if (name.equals(result)) {
-                return R.ok("成功");
-            } else {
-                return R.ok("人脸不匹配！");
+            // 获取用户
+            StudentInfo studentInfo = studentInfoService.getOne(Wrappers.<StudentInfo>lambdaQuery().eq(StudentInfo::getName, result));
+            if (studentInfo == null) {
+                return new FebsResponse().message("人脸不匹配");
             }
+
+            User user = userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getUserId, studentInfo.getUserId()));
+            if (user == null) {
+                return new FebsResponse().message("人脸不匹配");
+            }
+            return loginLogService.faceLogin(user, request);
         }
     }
 

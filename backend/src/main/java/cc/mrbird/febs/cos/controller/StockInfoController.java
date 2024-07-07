@@ -1,6 +1,7 @@
 package cc.mrbird.febs.cos.controller;
 
 
+import cc.mrbird.febs.common.utils.FileDownloadUtils;
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.StockInfo;
 import cc.mrbird.febs.cos.service.IStockInfoService;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
 /**
@@ -35,6 +37,18 @@ public class StockInfoController {
     @GetMapping("/home")
     public R home(Integer type, Integer userId) {
         return R.ok(stockInfoService.home(type, userId));
+    }
+
+    /**
+     * 下载模板
+     */
+    @GetMapping("/template")
+    public void downloadTemplate(HttpServletResponse response) {
+        try {
+            FileDownloadUtils.downloadTemplate(response, "导入模板.xlsx");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

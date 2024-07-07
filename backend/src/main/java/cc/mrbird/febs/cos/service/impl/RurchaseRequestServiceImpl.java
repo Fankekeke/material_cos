@@ -1,5 +1,6 @@
 package cc.mrbird.febs.cos.service.impl;
 
+import cc.mrbird.febs.cos.dao.StockPutMapper;
 import cc.mrbird.febs.cos.entity.GoodsBelong;
 import cc.mrbird.febs.cos.entity.RurchaseRequest;
 import cc.mrbird.febs.cos.dao.RurchaseRequestMapper;
@@ -18,6 +19,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -32,9 +34,9 @@ import java.util.List;
 public class RurchaseRequestServiceImpl extends ServiceImpl<RurchaseRequestMapper, RurchaseRequest> implements IRurchaseRequestService {
 
     private final IGoodsBelongService goodsBelongService;
-
-    private final IStockPutService stockPutService;
-
+    @Lazy
+    private final StockPutMapper stockPutMapper;
+    @Lazy
     private final IStockInfoService stockInfoService;
 
     @Override
@@ -44,7 +46,7 @@ public class RurchaseRequestServiceImpl extends ServiceImpl<RurchaseRequestMappe
 
     @Override
     public Boolean rurchaseRequestAdd(RurchaseRequest rurchaseRequest) {
-        rurchaseRequest.setNum("RUR-"+new Date().getTime());
+        rurchaseRequest.setNum("RUR-" + System.currentTimeMillis());
         JSONArray array = JSONUtil.parseArray(rurchaseRequest.getGoods());
         List<GoodsBelong> goodsBelongList = JSONUtil.toList(array, GoodsBelong.class);
         rurchaseRequest.setStep(0);
@@ -67,8 +69,8 @@ public class RurchaseRequestServiceImpl extends ServiceImpl<RurchaseRequestMappe
         stockPut.setCustodian(rurchaseRequest.getCustodian());
         stockPut.setPutUser(rurchaseRequest.getPutUser());
         stockPut.setPrice(rurchaseRequest.getPrice());
-        stockPut.setNum("PUT-"+new Date().getTime());
-        stockPutService.save(stockPut);
+        stockPut.setNum("PUT-" + System.currentTimeMillis());
+        stockPutMapper.insert(stockPut);
 
         goodsBelongList.forEach(item -> {
             item.setCreateDate(DateUtil.formatDateTime(new Date()));
@@ -77,7 +79,7 @@ public class RurchaseRequestServiceImpl extends ServiceImpl<RurchaseRequestMappe
             StockInfo stockInfo = stockInfoService.getOne(Wrappers.<StockInfo>lambdaQuery().eq(StockInfo::getName, item.getName()).eq(StockInfo::getTypeId, item.getTypeId()).eq(StockInfo::getIsIn, 0));
             if (stockInfo != null) {
                 // 更改库房数据
-                stockInfoService.update(Wrappers.<StockInfo>lambdaUpdate().set(StockInfo::getAmount, stockInfo.getAmount()+item.getAmount())
+                stockInfoService.update(Wrappers.<StockInfo>lambdaUpdate().set(StockInfo::getAmount, stockInfo.getAmount() + item.getAmount())
                         .set(StockInfo::getPrice, stockInfo.getPrice())
                         .eq(StockInfo::getName, stockInfo.getName()));
             } else {

@@ -189,9 +189,6 @@ export default {
         title: '用户名称',
         dataIndex: 'name'
       }, {
-        title: '编号',
-        dataIndex: 'code'
-      }, {
         title: '采购部门',
         dataIndex: 'team',
         customRender: (text, row, index) => {

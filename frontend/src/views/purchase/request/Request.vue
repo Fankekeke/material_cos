@@ -42,6 +42,7 @@
     <div>
       <div class="operator">
         <a-button type="primary" ghost @click="add">入库</a-button>
+        <a-button type="primary" ghost @click="addExport">导入</a-button>
         <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
@@ -80,6 +81,12 @@
         </template>
       </a-table>
     </div>
+    <stock-export
+      v-if="stockExportAdd.visiable"
+      @close="handleexamAddClose"
+      @success="handleexamAddSuccess"
+      :examAddVisiable="stockExportAdd.visiable">
+    </stock-export>
     <request-add
       v-if="requestAdd.visiable"
       @close="handleRequestAddClose"
@@ -92,15 +99,19 @@
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
 import RequestAdd from './RequestAdd'
+import StockExport from './StockExport.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'request',
-  components: {RequestAdd, RangeDate},
+  components: {RequestAdd, RangeDate, StockExport},
   data () {
     return {
+      stockExportAdd: {
+        visiable: false
+      },
       advanced: false,
       requestAdd: {
         visiable: false
@@ -191,6 +202,16 @@ export default {
           }
         }
       }, {
+        title: '所属库房',
+        dataIndex: 'stockName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
         title: '备注',
         dataIndex: 'content',
         customRender: (text, row, index) => {
@@ -218,6 +239,17 @@ export default {
     this.getConsumableType()
   },
   methods: {
+    addExport () {
+      this.stockExportAdd.visiable = true
+    },
+    handleexamAddClose () {
+      this.stockExportAdd.visiable = false
+    },
+    handleexamAddSuccess () {
+      this.stockExportAdd.visiable = false
+      this.$message.success('导入成功')
+      this.search()
+    },
     getConsumableType () {
       this.$get('/cos/consumable-type/list').then((r) => {
         this.consumableType = r.data.data

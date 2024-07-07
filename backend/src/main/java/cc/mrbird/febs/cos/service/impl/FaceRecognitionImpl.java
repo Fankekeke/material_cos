@@ -77,7 +77,7 @@ public class FaceRecognitionImpl implements FaceRecognition {
         // 	图片质量控制 NONE: 不进行控制 LOW:较低的质量要求 NORMAL: 一般的质量要求 HIGH: 较高的质量要求
         options.put("quality_control", "LOW");
         // 活体检测控制 NONE: 不进行控制 LOW:较低的活体要求(高通过率 低攻击拒绝率) NORMAL: 一般的活体要求(平衡的攻击拒绝率, 通过率) HIGH: 较高的活体要求(高攻击拒绝率 低通过率)
-        options.put("liveness_control", "LOW");
+        options.put("liveness_control", "NONE");
 
         // 图片信息(数据大小应小于10M)
         String imageType = "BASE64";

@@ -135,7 +135,7 @@ export default {
         values.id = this.rowId
         if (!err) {
           this.loading = true
-          this.$put('/cos/user-info', {
+          this.$put('/cos/student-info', {
             ...values
           }).then((r) => {
             this.reset()

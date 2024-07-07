@@ -195,6 +195,16 @@ export default {
           }
         }
       }, {
+        title: '所属库房',
+        dataIndex: 'stockName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
         title: '备注',
         dataIndex: 'content',
         customRender: (text, row, index) => {

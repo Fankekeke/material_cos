@@ -1,41 +1,25 @@
 <template>
-  <a-modal v-model="show" title="新增用户" @cancel="onClose" :width="800">
-    <template slot="footer">
-      <a-button key="back" @click="onClose">
-        取消
-      </a-button>
-      <a-button key="submit" type="primary" :loading="loading" @click="handleSubmit">
-        提交
-      </a-button>
-    </template>
-    <a-form :form="form" layout="vertical">
-      <a-row :gutter="20">
-        <a-col :span="12">
-          <a-form-item label='用户名称' v-bind="formItemLayout">
-            <a-input v-decorator="[
-            'name',
-            { rules: [{ required: true, message: '请输入名称!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
-          <a-form-item label='所属部门' v-bind="formItemLayout">
-            <a-input v-decorator="[
-            'team',
-            { rules: [{ required: true, message: '请输入所属部门!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
-        <a-col :span="24">
-          <a-form-item label='备注' v-bind="formItemLayout">
-            <a-textarea :rows="6" v-decorator="[
-            'content',
-             { rules: [{ required: true, message: '请输入备注!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
-      </a-row>
-    </a-form>
+  <a-modal v-model="show" title="导入物品信息" @cancel="onClose" :width="500" :footer="null">
+    <a-upload-dragger
+      name="file"
+      :multiple="true"
+      accept=".xls, .xlsx"
+      action="http://127.0.0.1:9527/cos/stock-info/import"
+      @change="handleChange"
+    >
+      <p class="ant-upload-drag-icon">
+        <a-icon type="inbox" />
+      </p>
+      <p class="ant-upload-text">
+        Click or drag file to this area to upload
+      </p>
+      <p class="ant-upload-hint">
+        Support for a single or bulk upload
+      </p>
+    </a-upload-dragger>
+    <a-button-group style="margin-top: 20px">
+      <a-button type="primary" icon="cloud-download" @click="download"/>
+    </a-button-group>
   </a-modal>
 </template>
 
@@ -54,9 +38,9 @@ const formItemLayout = {
   wrapperCol: { span: 24 }
 }
 export default {
-  name: 'userAdd',
+  name: 'examAdd',
   props: {
-    userAddVisiable: {
+    examAddVisiable: {
       default: false
     }
   },
@@ -66,7 +50,7 @@ export default {
     }),
     show: {
       get: function () {
-        return this.userAddVisiable
+        return this.examAddVisiable
       },
       set: function () {
       }
@@ -83,6 +67,20 @@ export default {
     }
   },
   methods: {
+    handleChange ({file}) {
+      if (file.response !== undefined) {
+        console.log(file.response.code)
+        console.log(file.status)
+        if (file.response.code === 500 && file.status === 'done') {
+          this.$message.error(file.response.msg)
+        } else if (file.response.code === 0 && file.status === 'done') {
+          this.$emit('success')
+        }
+      }
+    },
+    download () {
+      window.location.href = 'http://127.0.0.1:9527/cos/stock-info/template'
+    },
     handleCancel () {
       this.previewVisible = false
     },
@@ -113,9 +111,8 @@ export default {
       this.form.validateFields((err, values) => {
         values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
-          values.publisher = this.currentUser.userId
           this.loading = true
-          this.$post('/cos/student-info', {
+          this.$post('/cos/stock-info/import', {
             ...values
           }).then((r) => {
             this.reset()

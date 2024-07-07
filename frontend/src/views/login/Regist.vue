@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
+
 const levelNames = {
   0: '低',
   1: '低',
@@ -193,6 +195,32 @@ export default {
         console.log(err)
       })
     },
+    ...mapMutations({
+      setToken: 'account/setToken',
+      setExpireTime: 'account/setExpireTime',
+      setPermissions: 'account/setPermissions',
+      setRoles: 'account/setRoles',
+      setUser: 'account/setUser',
+      setTheme: 'setting/setTheme',
+      setLayout: 'setting/setLayout',
+      setMultipage: 'setting/setMultipage',
+      fixSiderbar: 'setting/fixSiderbar',
+      fixHeader: 'setting/fixHeader',
+      setColor: 'setting/setColor'
+    }),
+    saveLoginData (data) {
+      this.setToken(data.token)
+      this.setExpireTime(data.exipreTime)
+      this.setUser(data.user)
+      this.setPermissions(data.permissions)
+      this.setRoles(data.roles)
+      this.setTheme(data.config.theme)
+      this.setLayout(data.config.layout)
+      this.setMultipage(data.config.multiPage === '1')
+      this.fixSiderbar(data.config.fixSiderbar === '1')
+      this.fixHeader(data.config.fixHeader === '1')
+      this.setColor(data.config.color)
+    },
     setImage () {
       var _this = this
       // 点击，canvas画图
@@ -201,14 +229,16 @@ export default {
       var image = this.thisCancas.toDataURL('image/png')
       let data = { file: image.replace(/^data:image\/\w+;base64,/, ''), name: this.name }
       this.$post('/cos/face/verification', data).then((r) => {
-        if (r.data.msg !== '成功') {
-          this.$message.error(r.data.msg)
+        if (r.data.message !== '认证成功') {
+          this.$message.error(r.data.message)
         } else {
           this.$message.success('验证通过')
+          let data = r.data.data
+          this.saveLoginData(data)
           setTimeout(() => {
-            this.faceVerification = true
-            this.faceView.visiable = false
-          })
+            this.loading = false
+          }, 500)
+          this.$router.push('/')
         }
       })
       // _this.imgSrc = image
@@ -229,11 +259,7 @@ export default {
       this.thisVideo.srcObject.getTracks()[0].stop()
     },
     faceViewOpen () {
-      if (this.name !== '') {
-        this.faceView.visiable = true
-      } else {
-        this.$message.warning('请先输入姓名')
-      }
+      this.faceView.visiable = true
     },
     isMobile () {
       return this.$store.state.setting.isMobile

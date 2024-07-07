@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -63,5 +64,6 @@ public class GoodsBelong implements Serializable {
      */
     private String createDate;
 
-
+    @TableField(exist = false)
+    private Integer stockId;
 }
