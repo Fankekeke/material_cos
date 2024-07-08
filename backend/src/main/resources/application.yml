@@ -87,6 +87,6 @@ febs:
         num: 1000
   shiro:
     # 后端免认证接口 url
-    anonUrl: /login,/logout/**,/regist,/user/check/**,/file/**,/imagesWeb/**,/cos/stock-info/import,/cos/face/**
+    anonUrl: /login,/logout/**,/regist,/user/check/**,/file/**,/imagesWeb/**,/cos/stock-info/**,/cos/face/**
     # token有效期，单位秒
     jwtTimeOut: 3600
