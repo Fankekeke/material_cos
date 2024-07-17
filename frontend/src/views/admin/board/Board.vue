@@ -10,11 +10,12 @@
   >
     <a-icon type="arrow-left" style="position: absolute;z-index: 999;color: red;font-size: 20px;margin: 15px" @click="home"/>
     <dv-border-box-11 title="欢迎各位领导莅临指导" style="height: 100vh;width: 100%;background: #333333">
-      <a-row style="padding: 50px;padding-top: 100px;color: white" v-if="!loading">
+      <a-row :gutter="20" style="padding: 50px;padding-top: 100px;color: white" v-if="!loading">
         <a-col :span="12">
           <div class="left-chart-1">
             <div class="lc1-details" style="color: white">入库类型统计</div>
-            <dv-capsule-chart class="lc1-chart" :config="config" style="height: 300px"/>
+<!--            <dv-capsule-chart class="lc1-chart" :config="config" style="height: 300px"/>-->
+            <dv-conical-column-chart class="lc1-chart" :config="config" style="height:300px;" />
           </div>
         </a-col>
         <a-col :span="12">
@@ -23,7 +24,8 @@
               <div class="left" style="color: white">
                 <div>出库类型统计</div>
               </div>
-              <dv-capsule-chart class="right" :config="config2" style="height: 300px"/>
+              <dv-scroll-ranking-board class="right" :config="config2" style="height:300px" />
+<!--              <dv-capsule-chart class="right" :config="config2" style="height: 300px"/>-->
             </div>
           </div>
         </a-col>
