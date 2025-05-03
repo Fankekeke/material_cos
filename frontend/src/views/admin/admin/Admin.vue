@@ -8,8 +8,8 @@
             <a-col :md="6" :sm="12" >
               <a-form-item
                 label="用户名"
-                :labelCol="{span: 4}"
-                :wrapperCol="{span: 18, offset: 2}">
+                :labelCol="{span: 5}"
+                :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.username"/>
               </a-form-item>
             </a-col>
@@ -17,8 +17,8 @@
             <a-col :md="12" :sm="24" >
               <a-form-item
                 label="创建时间"
-                :labelCol="{span: 4}"
-                :wrapperCol="{span: 18, offset: 2}">
+                :labelCol="{span: 5}"
+                :wrapperCol="{span: 18, offset: 1}">
                 <range-date @change="handleDateChange" ref="createTime"></range-date>
               </a-form-item>
             </a-col>

@@ -49,6 +49,11 @@ public class EnterpriseInfoController {
                 .like(StrUtil.isNotEmpty(key), EnterpriseInfo::getIndustry, key)));
     }
 
+    @GetMapping("/listAll")
+    public R listAll() {
+        return R.ok(enterpriseInfoService.list(Wrappers.<EnterpriseInfo>lambdaQuery().isNotNull(EnterpriseInfo::getName)));
+    }
+
     /**
      * 根据编号查询企业信息
      *

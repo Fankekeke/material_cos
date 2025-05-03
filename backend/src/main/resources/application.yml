@@ -90,3 +90,4 @@ febs:
     anonUrl: /login,/logout/**,/regist,/user/check/**,/file/**,/imagesWeb/**,/cos/stock-info/**,/cos/face/**
     # token有效期，单位秒
     jwtTimeOut: 3600
+  

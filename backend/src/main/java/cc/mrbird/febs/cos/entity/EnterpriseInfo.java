@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * 企业信息管理
@@ -155,4 +156,7 @@ public class EnterpriseInfo implements Serializable {
      * 企业照片
      */
     private String images;
+    private String address;
+    private BigDecimal longitude;
+    private BigDecimal latitude;
 }

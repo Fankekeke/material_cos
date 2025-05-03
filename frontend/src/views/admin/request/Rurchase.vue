@@ -7,7 +7,15 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="物品名称"
+                label="供应单号"
+                :labelCol="{span: 5}"
+                :wrapperCol="{span: 18, offset: 1}">
+                <a-input v-model="queryParams.num"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="供应商"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.name"/>
@@ -15,19 +23,12 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="物品型号"
+                label="采购状态"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.type"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="物品类型"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-select v-model="queryParams.typeId" style="width: 100%" allowClear>
-                  <a-select-option v-for="(item, index) in consumableType" :value="item.id" :key="index">{{ item.name }}</a-select-option>
+                <a-select v-model="queryParams.status" allowClear>
+                  <a-select-option value="1">运输中</a-select-option>
+                  <a-select-option value="2">已验收</a-select-option>
                 </a-select>
               </a-form-item>
             </a-col>
@@ -41,9 +42,8 @@
     </div>
     <div>
       <div class="operator">
-        <a-button type="primary" ghost @click="add">出库</a-button>
-        <a-button type="primary" @click="download">导出</a-button>
-<!--        <a-button @click="batchDelete">删除</a-button>-->
+        <a-button type="primary" ghost @click="add">新增</a-button>
+        <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
@@ -55,69 +55,84 @@
                :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
                :scroll="{ x: 900 }"
                @change="handleTableChange">
-        <template slot="titleShow" slot-scope="text, record">
+        <template slot="numShow" slot-scope="text, record">
           <template>
-            <a-badge status="processing"/>
-            <a-tooltip>
-              <template slot="title">
-                {{ record.title }}
-              </template>
-              {{ record.title.slice(0, 8) }} ...
-            </a-tooltip>
-          </template>
-        </template>
-        <template slot="contentShow" slot-scope="text, record">
-          <template>
-            <a-tooltip>
-              <template slot="title">
-                {{ record.content }}
-              </template>
-              {{ record.content.slice(0, 30) }} ...
-            </a-tooltip>
+            <a-badge v-if="record.step == 0" status="processing"/>
+            <a-badge v-if="record.step == 1" status="success"/>
+            {{ record.num }}
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
-          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
+          <a-icon type="reconciliation" @click="view(record)" title="查 看"></a-icon>
+          <a-icon v-if="record.status == 1" type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="物流添加" style="margin-left: 15px"></a-icon>
+          <a-icon type="cluster" @click="orderMapOpen(record)" title="地 图" style="margin-left: 15px"></a-icon>
         </template>
       </a-table>
     </div>
-    <stock-out
-      @close="handleStockoutClose"
-      @success="handleStockoutSuccess"
-      :stockoutData="stockout.data"
-      :stockoutVisiable="stockout.visiable">
-    </stock-out>
+    <rurchase-add
+      v-if="rurchaseAdd.visiable"
+      @close="handleRurchaseAddClose"
+      @success="handleRurchaseAddSuccess"
+      :rurchaseAddVisiable="rurchaseAdd.visiable">
+    </rurchase-add>
+    <rurchase-view
+      @close="handleRurchaseViewClose"
+      :rurchaseShow="rurchaseView.visiable"
+      :rurchaseData="rurchaseView.data">
+    </rurchase-view>
+    <logistics-edit
+      ref="logisticsEdit"
+      @close="handlelogisticsEditClose"
+      @success="handlelogisticsEditSuccess"
+      :logisticsEditVisiable="logisticsEdit.visiable">
+    </logistics-edit>
+    <MapView
+      @close="handleorderMapViewClose"
+      :orderShow="orderMapView.visiable"
+      :orderData="orderMapView.data">
+    </MapView>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
 import {mapState} from 'vuex'
-import StockOut from './StockOut'
 import moment from 'moment'
+import logisticsEdit from './LogisticsEdit'
+import RurchaseAdd from './RurchaseAdd'
+import RurchaseView from './RurchaseView'
+import MapView from '../map/Map.vue'
 import { newSpread, floatForm, floatReset, saveExcel } from '@/utils/spreadJS'
 moment.locale('zh-cn')
-
 export default {
-  name: 'Stock',
-  components: {StockOut, RangeDate},
+  name: 'Rurchase',
+  components: {RurchaseView, RurchaseAdd, RangeDate, logisticsEdit, MapView},
   data () {
     return {
-      advanced: false,
-      stockout: {
+      orderMapView: {
         visiable: false,
         data: null
       },
-      requestEdit: {
+      logisticsEdit: {
         visiable: false
       },
+      rurchaseAdd: {
+        visiable: false
+      },
+      rurchaseEdit: {
+        visiable: false
+      },
+      rurchaseView: {
+        visiable: false,
+        data: null
+      },
+      advanced: false,
       queryParams: {},
       filteredInfo: null,
       sortedInfo: null,
       paginationInfo: null,
       dataSource: [],
       selectedRowKeys: [],
-      selectedRows: [],
       loading: false,
       pagination: {
         pageSizeOptions: ['10', '20', '30', '40', '100'],
@@ -127,7 +142,10 @@ export default {
         showSizeChanger: true,
         showTotal: (total, range) => `显示 ${range[0]} ~ ${range[1]} 条记录，共 ${total} 条记录`
       },
-      consumableType: []
+      userList: [],
+      fileList: [],
+      previewVisible: false,
+      previewImage: ''
     }
   },
   computed: {
@@ -136,67 +154,44 @@ export default {
     }),
     columns () {
       return [{
-        title: '物品名称',
+        title: '采购单号',
+        dataIndex: 'num',
+        scopedSlots: {customRender: 'numShow'}
+      }, {
+        title: '供应商',
+        ellipsis: true,
         dataIndex: 'name'
       }, {
-        title: '型号',
-        dataIndex: 'type',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
+        title: '备 注',
+        ellipsis: true,
+        dataIndex: 'content'
       }, {
-        title: '物品数量',
-        dataIndex: 'amount',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '单位',
-        dataIndex: 'unit',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '单价',
+        title: '预计价格',
         dataIndex: 'price',
         customRender: (text, row, index) => {
           if (text !== null) {
-            return '￥' + text.toFixed(2)
+            return text + ' 元'
           } else {
             return '- -'
           }
         }
       }, {
-        title: '总价',
-        dataIndex: 'allPrice',
+        title: '当前流程',
+        dataIndex: 'status',
         customRender: (text, row, index) => {
-          return '￥' + (row.price * row.amount).toFixed(2)
-        }
-      }, {
-        title: '物品类型',
-        dataIndex: 'consumableType',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return <a-tag>{text}</a-tag>
-          } else {
-            return '- -'
+          switch (text) {
+            case 1:
+              return <a-tag color="blue">运输中</a-tag>
+            case 2:
+              return <a-tag color="green">已验收</a-tag>
+            default:
+              return '- -'
           }
         }
       }, {
-        title: '所属库房',
-        dataIndex: 'stockName',
+        title: '采购地址',
+        dataIndex: 'outAddress',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -205,8 +200,9 @@ export default {
           }
         }
       }, {
-        title: '备注',
-        dataIndex: 'content',
+        title: '供应地址',
+        dataIndex: 'putAddress',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -215,8 +211,9 @@ export default {
           }
         }
       }, {
-        title: '入库时间',
+        title: '采购时间',
         dataIndex: 'createDate',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -224,67 +221,81 @@ export default {
             return '- -'
           }
         }
+      }, {
+        title: '操作',
+        dataIndex: 'operation',
+        scopedSlots: {customRender: 'operation'}
       }]
     }
   },
   mounted () {
     this.fetch()
-    this.getConsumableType()
   },
   methods: {
-    download () {
+    orderMapOpen (row) {
+      this.orderMapView.data = row
+      this.orderMapView.visiable = true
+    },
+    handleorderMapViewClose () {
+      this.orderMapView.visiable = false
+    },
+    handlelogisticsEditClose () {
+      this.logisticsEdit.visiable = false
+    },
+    handlelogisticsEditSuccess () {
+      this.logisticsEdit.visiable = false
+      this.$message.success('修改成功')
+      this.search()
+    },
+    downLoad (row) {
       this.$message.loading('正在生成', 0)
-      this.$get('/cos/stock-info/list').then((r) => {
+      this.$get('/cos/goods-belong/getGoodsByNum', { num: row.num }).then((r) => {
         let newData = []
         r.data.data.forEach((item, index) => {
-          newData.push([item.name, item.type !== null ? item.type : '- -', item.amount !== null ? item.amount : '- -', item.unit, item.price, item.consumableType, item.content, item.createDate])
+          newData.push([(index + 1).toFixed(0), item.name, item.type !== null ? item.type : '- -', item.unit !== null ? item.unit : '- -', item.amount, item.price, ''])
         })
-        let spread = newSpread('stock')
-        spread = floatForm(spread, 'stock', newData)
-        saveExcel(spread, '库房物品.xlsx')
-        floatReset(spread, 'stock', newData.length)
+        let spread = newSpread('purchasePlan')
+        spread = floatForm(spread, 'purchasePlan', newData)
+        saveExcel(spread, '采购计划单.xlsx')
+        floatReset(spread, 'purchasePlan', newData.length)
         this.$message.destroy()
       })
     },
-    getConsumableType () {
-      this.$get('/cos/consumable-type/list').then((r) => {
-        this.consumableType = r.data.data
-      })
+    add () {
+      this.rurchaseAdd.visiable = true
     },
-    onSelectChange (selectedRowKeys, selectedRows) {
-      selectedRows.forEach(item => {
-        if (item.amount === 0) {
-          this.$message.warning('该物品没有库存！')
-          return false
-        }
-      })
+    handleRurchaseAddClose () {
+      this.rurchaseAdd.visiable = false
+    },
+    handleRurchaseAddSuccess () {
+      this.rurchaseAdd.visiable = false
+      this.$message.success('新增供应采购成功')
+      this.search()
+    },
+    edit (record) {
+      this.$refs.logisticsEdit.setFormValues(record)
+      this.logisticsEdit.visiable = true
+    },
+    handleRurchaseEditClose () {
+      this.rurchaseEdit.visiable = false
+    },
+    handleRurchaseEditSuccess () {
+      this.rurchaseEdit.visiable = false
+      this.$message.success('修改供应采购成功')
+      this.search()
+    },
+    view (row) {
+      this.rurchaseView.data = row
+      this.rurchaseView.visiable = true
+    },
+    handleRurchaseViewClose () {
+      this.rurchaseView.visiable = false
+    },
+    onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
-      this.selectedRows = selectedRows
     },
     toggleAdvanced () {
       this.advanced = !this.advanced
-    },
-    add () {
-      if (!this.selectedRowKeys.length) {
-        this.$message.warning('请选择需要出库的物品')
-        return
-      }
-      let goods = this.selectedRows
-      goods.forEach(item => {
-        item.max = item.amount
-      })
-      this.stockout.data = JSON.parse(JSON.stringify(goods))
-      this.stockout.visiable = true
-    },
-    handleStockoutClose () {
-      this.stockout.visiable = false
-    },
-    handleStockoutSuccess () {
-      this.stockout.visiable = false
-      this.selectedRows = []
-      this.selectedRowKeys = []
-      this.$message.success('出库成功')
-      this.search()
     },
     handleDeptChange (value) {
       this.queryParams.deptId = value || ''
@@ -301,16 +312,14 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/request-type/' + ids).then(() => {
+          that.$delete('/cos/request-supply-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
-            that.selectedRows = []
             that.search()
           })
         },
         onCancel () {
           that.selectedRowKeys = []
-          that.selectedRows = []
         }
       })
     },
@@ -373,10 +382,10 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      if (params.typeId === undefined) {
-        delete params.typeId
+      if (params.status === undefined) {
+        delete params.status
       }
-      this.$get('/cos/stock-info/page', {
+      this.$get('/cos/request-supply-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data
